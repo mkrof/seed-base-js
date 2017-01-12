@@ -23,7 +23,9 @@ inquirer.prompt(config.questions)
 
 function scaffold (answers) {
   return Promise.all([
+    copyFile('.gitignore'),
     copyFile('.babelrc'),
+    copyFile('.tern-project'),
     renderFile('package.json', answers)
   ])
 }
